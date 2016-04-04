@@ -1,0 +1,27 @@
+-dontwarn com.squareup.**
+
+-dontwarn sun.misc.Unsafe
+-dontnote sun.misc.Unsafe
+
+-dontwarn android.support.v7.**
+-dontwarn android.support.v4.**
+-dontwarn android.support.test.**
+-dontwarn android.test.**
+-dontwarn junit.**
+-dontwarn org.junit.**
+-dontwarn com.smartnsoft.**
+
+-dontwarn com.google.android.**
+-keep class com.google.android.** {
+   *;
+}
+
+-dontwarn com.google.commmon.**
+-keep class com.google.common.** {
+   *;
+}
+
+-dontwarn org.hamcrest.**
+-keep class org.hamcrest.** {
+   *;
+}

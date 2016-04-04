@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- Generic dimension sizes, per the Smart&Soft Design guidelines. -->
+  <dimen name="dimen3dip">3dip</dimen>
+  <dimen name="dimen5dip">5dip</dimen>
+  <dimen name="dimen10dip">10dip</dimen>
+  <dimen name="dimen15dip">15dip</dimen>
+  <dimen name="dimen20dip">20dip</dimen>
+  <dimen name="dimen25dip">25dip</dimen>
+  <dimen name="dimen30dip">30dip</dimen>
+  <dimen name="dimen35dip">35dip</dimen>
+  <dimen name="dimen40dip">40dip</dimen>
+  <dimen name="dimen45dip">45dip</dimen>
+  <dimen name="dimen50dip">50dip</dimen>
+  <dimen name="dimen55dip">55dip</dimen>
+  <dimen name="dimen60dip">60dip</dimen>
+</resources>

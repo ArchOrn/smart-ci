@@ -1,0 +1,114 @@
+apply plugin: "com.android.application"
+apply from: "SmartCI-tasks.gradle"
+apply from: "dependencies-tests.gradle"
+apply from: "SmartCI-naming.gradle"
+
+android
+{
+  compileSdkVersion 23
+  buildToolsVersion "23.0.2"
+  useLibrary "org.apache.http.legacy"
+
+  defaultConfig
+  {
+    applicationId "com.smartnsoft.smartci"
+
+    minSdkVersion 15
+    targetSdkVersion 23
+
+    versionCode 1
+    versionName "1.0-dev"
+
+    testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+  }
+
+  lintOptions
+  {
+    abortOnError false
+  }
+
+  buildTypes
+  {
+    release
+    {
+      minifyEnabled true
+      zipAlignEnabled true
+      shrinkResources true
+      proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.txt", "proguard-test-rules.txt"
+    }
+
+    debug
+    {
+      minifyEnabled true
+      proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.txt", "proguard-test-rules.txt"
+    }
+  }
+
+  dexOptions
+  {
+    jumboMode = true
+    javaMaxHeapSize "4g"
+  }
+
+  packagingOptions
+  {
+    exclude "LICENSE.txt"
+    exclude "META-INF/LICENSE"
+    exclude "META-INF/LICENSE.txt"
+    exclude "META-INF/NOTICE"
+  }
+
+  testOptions
+  {
+    unitTests.all
+    {
+      // configure max heap size of the test JVM
+      maxHeapSize = "2048m"
+
+      // configure the test JVM arguments
+      jvmArgs "-XX:MaxPermSize=512m", "-XX:-UseSplitVerifier"
+
+      // Specify max number of processes (default is 1)
+      maxParallelForks = 1
+
+      // Specify max number of test classes to execute in a test process
+      // before restarting the process (default is unlimited)
+      forkEvery = 150
+
+      // configure whether failing tests should fail the build
+      ignoreFailures false
+
+
+      // use afterTest to listen to the test execution results
+      afterTest { descriptor, result ->
+        println "Executing ${descriptor.name} with result: ${result.resultType}"
+      }
+    }
+  }
+}
+
+dependencies
+{
+  //Android
+  compile ("com.android.support:appcompat-v7:23.1.1")
+  compile ("com.android.support:recyclerview-v7:23.1.1")
+  compile ("com.android.support:design:23.1.1")
+
+  //Jackson
+  compile ("com.fasterxml.jackson.core:jackson-core:2.4.1")
+  compile ("com.fasterxml.jackson.core:jackson-annotations:2.4.1")
+  compile ("com.fasterxml.jackson.core:jackson-databind:2.4.1.1")
+
+  //Bug trackers
+  compile ("com.crittercism:crittercism-android-agent:5.3.3")
+
+  //Smart&Soft
+  compile ("com.smartnsoft:droid4me:2.2.19")
+  compile ("com.smartnsoft:droid4me.ext:2.2.21")
+  compile ("com.smartnsoft:layoutinflator:1.0")
+  compile ("com.smartnsoft:recyclerview:1.1.0")
+  compile ("com.smartnsoft:logentries:0.2")
+  {
+    exclude group: "com.smartnsoft", module: "pushcommand"
+  }
+}

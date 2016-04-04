@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <PreferenceCategory
+    android:title="@string/Settings_title"
+  >
+    <Preference
+      android:key="version"
+      android:persistent="false"
+      android:title="@string/Settings_version_title"
+    />
+    <Preference
+      android:key="cache"
+      android:persistent="false"
+      android:title="@string/Settings_cache_title"
+      android:summary="@string/Settings_cache_summary"
+    />
+  </PreferenceCategory>
+</PreferenceScreen>

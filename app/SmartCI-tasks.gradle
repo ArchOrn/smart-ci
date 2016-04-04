@@ -1,0 +1,6 @@
+// This file defines the task linked to the module.
+// By default, the releaseApp task is used by the software factory in order to build and release the app
+// If you want to build and release several flavors, use the following syntax : task releaseApp(dependsOn: ['assembleFlavor1Release',  'assembleFlavor2Release'])
+
+task releaseApp(dependsOn: 'assembleRelease') {
+}

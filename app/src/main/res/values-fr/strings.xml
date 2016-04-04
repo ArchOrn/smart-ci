@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- general -->
+  <string name="problem">Problème</string>
+  <string name="unhandledProblem">Vous venez de découvrir un bug dans l\'application, veuillez nous en excuser\u00A0!\n\nAuriez-vous l\'amabilité de nous en faire part, SVP ? Merci.</string>
+  <string name="dialogButton_unhandledProblem">Envoyer</string>
+  <string name="progressDialogMessage_unhandledProblem">Récupération et calcul de la trace de l\'application&#8230;</string>
+  <string name="unavailableService">Service indisponible\u00A0: l\'écran ne peut être affiché correctement.\n\nSVP, appuyez sur la touche \"OK\".</string>
+  <string name="connectivityProblem">Votre terminal n\'est actuellement pas connecté à Internet, ou bien votre connexion est très mauvaise.\n\nVérifiez votre connexion et réessayez, SVP.</string>
+  <string name="connectivityProblemRetry">Votre terminal n\'est actuellement pas connecté à Internet, ou bien votre connexion est très mauvaise.\n\nSouhaitez-vous réessayer ?</string>
+  <string name="unavailableItem">Impossible de récupérer correctement l\'élément\u00A0: cet écran ne peut être affiché correctement, désolé.\n\nSVP, appuyez sur la touche \"OK\".</string>
+
+  <!-- life cycle -->
+  <string name="retry">Réessayer</string>
+  <string name="loading">Chargement\u2026</string>
+
+  <!-- settings -->
+  <string name="Settings_cache_summary">Vider tous les caches mémoires et persistants</string>
+</resources>

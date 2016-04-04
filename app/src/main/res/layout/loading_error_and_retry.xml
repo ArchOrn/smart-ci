@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/loadingErrorAndRetry"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:gravity="center"
+  android:visibility="gone"
+>
+  <LinearLayout
+    android:id="@+id/errorAndRetry"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/dimen10dip"
+    android:paddingRight="@dimen/dimen10dip"
+    android:gravity="center"
+    android:visibility="gone"
+    android:background="@color/background"
+  >
+    <TextView
+      android:id="@+id/errorText"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:layout_marginBottom="@dimen/dimen40dip"
+      android:textSize="18dip"
+    />
+    <Button
+      android:id="@+id/retry"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:text="@string/retry"
+    />
+  </LinearLayout>
+  <include layout="@layout/loading"/>
+</RelativeLayout>

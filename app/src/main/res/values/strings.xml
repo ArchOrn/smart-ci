@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+  <!-- application -->
+  <string name="applicationName">SmartCI</string>
+  <string name="applicationDescription">SmartCI test application for TravisCI</string>
+
+  <!-- general -->
+  <string name="problem">Problem</string>
+  <string name="unhandledProblem">You have found a bug in the application, sorry!\n\nWould you be kind enough to report the problem to us? Thank you.</string>
+  <string name="dialogButton_unhandledProblem">Send</string>
+  <string name="progressDialogMessage_unhandledProblem">Retrieving and computing the application log&#8230;</string>
+  <string name="unavailableService">Service unavailable: this screen cannot be displayed properly.\n\nHave you checked you Internet connection?\n\nPlease, press \"OK\".</string>
+  <string name="connectivityProblem">Your terminal is not currently connected to Internet, or your connection is very poor.\n\nPlease, check your connection and try again.</string>
+  <string name="connectivityProblemRetry">Your terminal is not currently connected to Internet, or your connection is very poor.\n\nDo you want to try again?</string>
+  <string name="unavailableItem">Cannot retrieve the element properly: this screen cannot be displayed properly.\n\nPlease, press the \"OK\" button.</string>
+
+  <!-- life cycle -->
+  <string name="retry">Retry</string>
+  <string name="loading">Loading\u2026</string>
+
+  <!-- settings -->
+  <string name="Settings_title">SmartCI Dev Settings</string>
+  <string name="Settings_version_title">Version</string>
+  <string name="Settings_cache_title">Cache</string>
+  <string name="Settings_cache_summary">Delete the cache</string>
+</resources>

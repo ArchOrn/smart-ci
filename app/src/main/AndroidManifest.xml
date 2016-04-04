@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.smartnsoft.smartci"
+>
+
+  <!-- We need this permission, in order to access to Internet -->
+  <uses-permission android:name="android.permission.INTERNET"/>
+  <!-- We need this permission, because the "ConnectivityListener" component, the analytics and many ad SDKs require it -->
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+  <!-- We need this permission, when geolocalizing -->
+  <!--uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+  <uses-permission  android:name="android.permission.ACCESS_FINE_LOCATION"/-->
+  <!-- We need this permission, when sending a log on unexpected errors -->
+  <!--uses-permission android:name="android.permission.READ_LOGS"/-->
+  <!-- Required for the push notifications, in case the 'vibrate' option is used -->
+  <!--uses-permission android:name="android.permission.VIBRATE"/-->
+  <!-- We need those permission, for the C2DM feature -->
+  <!-- uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+  <permission
+    android:name="com.smartnsoft.smartci.permission.C2D_MESSAGE"
+    android:protectionLevel="signature"
+    />
+  <uses-permission android:name="com.smartnsoft.smartci.permission.C2D_MESSAGE"/ -->
+
+
+  <application
+    android:allowBackup="false"
+    android:name=".SmartCIApplication"
+    android:icon="@mipmap/ic_launcher"
+    android:label="@string/applicationName"
+    android:theme="@style/AppTheme.SmartCI.NoActionBar"
+    android:hardwareAccelerated="true"
+  >
+
+    <!-- This is required in order to have Google Maps work at runtime! -->
+    <!--uses-library android:name="com.google.android.maps"/-->
+
+    <!-- The Capptain application identifier -->
+    <!--meta-data
+      android:name="capptain:appId"
+      android:value="xxx"
+    /-->
+
+    <!-- The Capptain SDK will send the device geo-location -->
+    <!--meta-data
+      android:name="capptain:locationReport:lazyArea"
+      android:value="true"
+    /-->
+
+    <!-- The Capptain SDK will report crashes -->
+    <!--meta-data
+      android:name="capptain:reportCrash"
+      android:value="true"
+    /-->
+
+    <!-- The Capptain SDK will use the Google Cloud Messaging -->
+    <!--meta-data
+      android:name="capptain:gcm:sender"
+      android:value="000\n"
+    /-->
+
+    <!--service
+      android:name="com.ubikod.capptain.android.service.CapptainService"
+      android:label="@string/applicationName"
+      android:process=":Capptain"
+      android:exported="true"
+    >
+      <intent-filter>
+        <category android:name="android.intent.category.DEFAULT"/>
+        <action android:name="com.ubikod.capptain.ICapptainService"/>
+        <data android:scheme="capptain"/>
+      </intent-filter>
+      <meta-data
+        android:name="capptain:log:test"
+        android:value="false"
+      />
+      <meta-data
+        android:name="capptain:api:level"
+        android:value="21"
+      />
+      <meta-data
+        android:name="capptain:api:id"
+        android:value="b6a5b1113175bf391e442a8653876b84"
+      />
+    </service>
+
+    <receiver
+      android:name="com.ubikod.capptain.android.sdk.reach.CapptainReachReceiver"
+      android:exported="true"
+    >
+      <intent-filter>
+        <action android:name="com.ubikod.capptain.intent.action.AGENT_CREATED"/>
+        <action android:name="com.ubikod.capptain.intent.action.MESSAGE"/>
+      </intent-filter>
+    </receiver>
+
+    <receiver
+      android:name="com.ubikod.capptain.android.sdk.gcm.CapptainGCMEnabler"
+      android:exported="false"
+    >
+      <intent-filter>
+        <action android:name="com.ubikod.capptain.intent.action.APPID_GOT"/>
+      </intent-filter>
+    </receiver>
+
+    <receiver
+      android:name="com.ubikod.capptain.android.sdk.gcm.CapptainGCMReceiver"
+      android:permission="com.google.android.c2dm.permission.SEND"
+    >
+      <intent-filter>
+        <action android:name="com.google.android.c2dm.intent.REGISTRATION"/>
+        <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+       <category android:name="com.smartnsoft.smartci"/>
+      </intent-filter>
+    </receiver>
+
+    <receiver
+      android:name="com.smartnsoft.push.receiver.CapptainNotificationRebondReceiver"
+      android:exported="false"
+    /-->
+
+    <activity
+      android:name=".MainActivity"
+      android:configChanges="orientation|keyboardHidden|screenLayout"
+    >
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN"/>
+        <category android:name="android.intent.category.LAUNCHER"/>
+      </intent-filter>
+    </activity>
+
+    <activity
+      android:name=".DevelopmentSettingsActivity"
+      android:label="@string/Settings_title"
+      android:theme="@style/AppTheme.SmartCI"
+      android:configChanges="orientation|keyboardHidden|screenLayout"
+      android:exported="true"
+      android:enabled="true"
+    >
+      <intent-filter>
+        <action android:name="com.smartnsoft.DEVELOPMENT_SETTINGS"/>
+        <category android:name="android.intent.category.PREFERENCE"/>
+        <!--<category android:name="android.intent.category.LAUNCHER"/>-->
+      </intent-filter>
+    </activity>
+
+  </application>
+
+</manifest>

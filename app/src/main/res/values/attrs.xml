@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="Widgets">
+    <attr name="android:textStyle"/>
+    <attr name="typeface">
+      <enum
+        name="RobotoBold"
+        value="0"
+      />
+      <enum
+        name="RobotoCondensedRegular"
+        value="1"
+      />
+      <enum
+        name="RobotoLight"
+        value="2"
+      />
+      <enum
+        name="RobotoMedium"
+        value="3"
+      />
+      <enum
+        name="RobotoItalic"
+        value="4"
+      />
+    </attr>
+  </declare-styleable>
+</resources>
